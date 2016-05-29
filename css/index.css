@@ -1,0 +1,85 @@
+.fl{ float:left;}.fr{ float: right;}
+.header{position: relative; height:.375rem; border-bottom:1px solid #ddd;}
+.header p{ text-align: center; height:.375rem; font-size: .17rem; line-height: .375rem;}
+.header a,.header span{  display: block; position: absolute; top: 0; width:.375rem;  height:.375rem; background-repeat: no-repeat; background-size: cover;}
+.header a{left: 0; background-image: url("../img/return.png");}
+.header span{ right: 0; background-image: url("../img/more.png");}
+.pay-main .text{position: relative; margin:.3rem;}
+.pay-main .text img{ position: absolute; left: 0; top:50%; margin-top: -.2125rem; width: .425rem; height: .425rem;}
+.pay-main .text span{ width:2.7rem; padding-left: .6rem; font-size: 0.14rem; line-height: .2rem;}
+.pay-main .text span em{ color: #999; font-size: .1rem;}
+.pay-main .ic-bao{ position: relative;height: .91rem; text-align: center;}
+.pay-main .ic-bao img{position: absolute; top:0; left: 50%; margin-left: -.455rem; width: .91rem; height: .91rem;}
+.bnt{ text-align: center;}
+.bnt a{ display:inline-block; width:2.75rem; height:.4rem; margin-top: .15rem; background: #fafafa; border: 1px solid #ddd; line-height:.4rem; font-size: .15rem; text-align: center; border-radius: 100px;}
+.bnt .sub-share{ background: #fc6436; color: #fff; border: 0;}
+
+/*分享弹层*/
+.layer{display:none;  position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: .6; z-index: 9;}
+/*.share-box{ display: none; position: fixed; bottom: 0; left: 0; width: 100%; padding-top: .1rem;  background: #fff; z-index: 99;}*/
+/*.share-box .ic-bao{position: absolute; top:-.65rem; left: 50%; margin-left: -.455rem; width: .91rem; height: .91rem;}*/
+/*.share-box .close{height: .2rem; padding-right: .1rem; margin-bottom: .1rem; text-align: right;}*/
+/*.share-box .close i{ display: inline-block; width: .2rem; height: .2rem; background: url("../img/close.png") no-repeat; background-size: cover;}*/
+/*.share-box h3{ font-size: .14rem; padding:.1rem .45rem 0;line-height: .2rem;}*/
+/*.share-box em{ font-size: .2rem; color: #f00; margin:0 .03rem}*/
+/*.share-box ul{ padding-left: .09rem; margin-top: .15rem;}*/
+/*.share-box ul li{ float: left; width: .75rem; text-align: center; margin-bottom: .2rem;}*/
+/*.share-box ul li a{ display: block;}*/
+/*.share-box ul li a img{ width: .49rem; height: .49rem;}*/
+/*.share-box ul li a p{ height: .2rem;line-height: .2rem;}*/
+
+.msgTip{ position: fixed; bottom:30%; background: rgba(0,0,0,.7); color: #fff; font-size: .12rem; padding:.12rem .1rem; text-align: center; border-radius:.05rem;}
+.share-guide{ display:none;position: fixed; top: 0; left: 0; width: 100%;  z-index: 99;}
+.share-guide img{ display: block; width: 3.2rem; height:1.715rem; }
+.share-guide div{ text-align: center; margin-top: .7rem;}
+.share-guide div a{ display: inline-block; width: 1.6rem; height:.425rem; line-height:.425rem; border:1px solid #fff; border-radius: 5px; color: #fff; font-size: .15rem; }
+.rebate-main .banner img{ height: 1.93rem; width:3.2rem;}
+.rebate-main .tit{ font-size: .1rem; text-align: center; height: .35rem; line-height:.35rem; }
+.rebate-main .tit em{ color: red; font-size: .15rem;}
+.rebate-main .cont{ margin: .125rem; }
+.rebate-main .cont li{ width:2.95rem; height:1.46rem; border: 1px solid #ddd; border-radius:5px;background: #fff; overflow: hidden; }
+.rebate-main .cont .phot{ width:1.46rem; height:1.46rem;vertical-align: middle;}
+.rebate-main .cont .phot a{ display:table-cell; width:1.46rem; height:1.46rem; vertical-align: middle;}
+.rebate-main .cont .phot img{ max-width: 100%; max-height: 100%; border-bottom-left-radius:4px;border-top-left-radius: 4px;}
+.rebate-main .cont .info{ width: 1.3rem; margin-right: .08rem;}
+.rebate-main .cont .name{width: 1.3rem; margin-top: .08rem; overflow:hidden; white-space:nowrap;text-overflow:ellipsis; }
+.rebate-main .cont .discount{ height: .175rem; margin: .05rem 0;}
+.rebate-main .cont .discount span{ height: .175rem; line-height: .175rem; background: #f39800; color: #Fff; padding: 0 .1rem; border-radius:3px; margin-right:.1rem; }
+.rebate-main .cont .new-price i{ margin: .05rem .05rem 0 0; width: .11rem; height: .11rem; background: url("../img/q_icon.png") no-repeat; background-size: cover;}
+.rebate-main .cont .new-price b{  color: red;font-size: .15rem;}
+.rebate-main .cont .new-price em{ width: .37rem; height: .15rem; text-align: center; font-size: .08rem; line-height: .16rem; background: url("../img/zbg.png") no-repeat;background-size: cover; color: #fff; text-indent: .05rem;}
+.rebate-main .cont .old-price{margin: .05rem 0;}
+.rebate-main .cont .old-price i{ width: .09rem; height: .09rem;margin: .02rem .05rem 0 0; background: url("../img/q_icon2.png") no-repeat;background-size: cover;}
+.rebate-main .cont .old-price del{ color: #ddd; font-size: .1rem;}
+.rebate-main .cont .old-price em{ color: #999; margin-left: .05rem;}
+.rebate-main .cont .button a{ display: block;width: 1.3rem;  height: .26rem; background: #fc6436; font-size: .13rem; color: #fff; text-align: center; line-height:.27rem; border-radius: 3px; }
+.rebate-main .cont .button a.act{background: #999;}
+.rebate-main .share-button{ text-align: center; margin: .3rem 0;}
+.rebate-main .share-button a{ display: inline-block; width: 2.45rem; height:.425rem; text-align: center; line-height:.425rem; border-radius:2rem; background: #ffe400; color:red; font-size: .15rem;box-shadow: 0px 1px 2px #ffb04a;   }
+.rebate-main .entrance{margin: .125rem;}
+.rebate-main .entrance a{ color: #2082fb; font-size: .16rem;}
+ .entrance a i{display: inline-block;margin-left: .03rem;}
+.rebate-main .record-box{font-size: .14rem;margin:.125rem; border:1px solid #ddd; background: #fff;border-radius: 6px; padding:0 .12rem;}
+.rebate-main .record-box .num{ margin: .1rem 0;}
+.rebate-main .record-box .num b{ color: red;}
+.rebate-main .record-box .record-list{}
+.rebate-main .record-list li{ border-top:1px solid #ddd; padding-bottom: .1rem; }
+.rebate-main .record-list li p{ margin-top: .1rem;}
+.rebate-main .record-list li .ip span:nth-child(1){ color: red;}
+.rebate-main .record-list li .ip span:nth-child(2){ color: #999;font-size: .13rem;}
+.rebate-main .record-list li .msg{overflow:hidden; white-space:nowrap;text-overflow:ellipsis; }
+
+.page_mask{
+ position: fixed;
+ left: 0;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ background: url(../img/loading.gif) no-repeat center center;
+ background-size: .5rem .5rem;
+}
+
+.pay-main .rule h3{ font-size: .13rem; margin: .2rem .1rem 0; color: #333;}
+.pay-main .rule>div{ position:relative; }
+.pay-main .rule img{ position: absolute; left: .3rem; top:-.1rem; width:.15rem; height: .12rem; }
+.pay-main .rule #rule-content{ border: 1px solid #ddd; background: #fafafa; margin:.1rem; border-radius: 5px;font-size: .1rem; padding:.05rem;}
