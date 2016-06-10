@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>费用结算</title>
+    <meta name="author" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/global.js" type="text/javascript"></script>
+</head>
+<body>
+<!--头部-->
+<h1 class="header w"><a class="return" href="#"></a><p>费用结算</p><!--<span></span>--></h1>
+<!--查询-->
+<div class="inquiry clearfix">
+    <p class="fl"><label>时间：</label><select><option>全部</option><option>最近三天</option><option>最近一周</option><option>最近三个月</option></select></p>
+    <p class="fl total">计费：<b>35689</b>元</p>
+</div>
+<div class="order-status-cont">
+    <div class="list">
+        <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p> <p id="costInfo" class="fr"><a href="#">费用明细</a></p></h2>
+        <ul>
+            <li><label>用车人：</label><span>米多多</span></li>
+            <li><label><img src="img/apply_time.gif"/>用车时间：</label><span>2016-10-12 13:30 00 00</span></li>
+            <li><label>总里程：</label><span class="red">2390元</span></li>
+            <li><label>费用：</label><span class="red">2390元</span></li>
+        </ul>
+    </div>
+</div>
+<!--弹框-->
+<div class="layer"></div>
+<div class="layer-cont w">
+    <h2>总费用：<b>&yen;3000</b><a class="close" href="#"></a> </h2>
+    <div class="main settlement-main">
+        <p class="clearfix"><label>苏AD12357 里程300公里</label><span>&yen;100</span></p>
+        <p class="clearfix"><label>整日价格(100/天*1天)</label><span>&yen;100</span></p>
+        <p class="clearfix"><label>可用公里(100公里,超公里20/公里)</label><span>&yen;0</span></p>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        //费用明细弹框
+        showCancelFn($("#costInfo"),$(".layer,.layer-cont"), $(".close"));
+    })
+
+</script>
+
+
+</body>
+</html>
