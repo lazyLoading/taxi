@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>查看订单</title>
+    <meta name="author" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--头部-->
+<h1 class="header w"><a class="return" href="#"></a>
+    <p>查看订单</p><!--<span></span>--></h1>
+<div class="car-apply-cont">
+    <h2><sup>*</sup>申请人信息</h2>
+    <div>
+        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input id="applyUser" type="text"
+                                                                                 placeholder="用车人" value="米多多"
+                                                                                 readonly/></p>
+        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input id="applyTel" type="text"
+                                                                                placeholder="用车人联系方式"
+                                                                                value="18000000000" readonly/></p>
+        <p class="clearfix"><label><img src="img/apply-title.png"/></label><select id="applyDepartmentId" disabled>
+            <option>市委办公室</option>
+        </select></p>
+    </div>
+    <h2><sup>*</sup>用车人信息</h2>
+    <div>
+        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input id="useName" type="text"
+                                                                                 placeholder="用车人" value="米多多"
+                                                                                 readonly/></p>
+        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input id="useTel" type="text"
+                                                                                placeholder="用车人联系方式"
+                                                                                value="18000000000" readonly/></p>
+        <p class="clearfix"><label><img src="img/apply-title.png"/></label><select id="useTitle" disabled>
+            <option>处级</option>
+        </select></p>
+    </div>
+    <h2><sup>*</sup>订单详情</h2>
+    <div>
+        <p class="clearfix"><label><img src="img/apply_user.gif"/></label><input id="number" type="text"
+                                                                                 placeholder="人数" value="3" readonly/>
+        </p>
+        <p class="clearfix"><label><img src="img/apply-type.png"/></label><select id="mdels" disabled>
+            <option>商务车</option>
+        </select></p>
+        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><select id="reason" disabled>
+            <option>集中调研</option>
+        </select></p>
+        <p class="clearfix"><label><img src="img/apply-address.png"/></label><select id="region" disabled>
+            <option>市外</option>
+        </select></p>
+        <p class="clearfix"><label><img src="img/origin.gif"/></label><input id="beginPlace" type="text"
+                                                                             placeholder="上车地点" value="上海" readonly/>
+        </p>
+        <p class="clearfix"><label><img src="img/end.gif"/></label><input id="endPlace" type="text" placeholder="目的地"
+                                                                          value="南京" readonly/></p>
+        <p class="clearfix"><label><img src="img/apply_time.gif"/></label><input id="beginTime" type="text"
+                                                                                 placeholder="出发时间"
+                                                                                 value="2016-12-03 12:00:00" readonly/>
+        </p>
+        <p class="clearfix"><label><img src="img/apply_day.gif"/></label><input id="endTime" type="text"
+                                                                                placeholder="归队时间"
+                                                                                value="2016-12-03 12:00:00" readonly/>
+        </p>
+        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><textarea id="carMatters" placeholder="用车详细事项"
+                                                                                   readonly>出差11223344444</textarea></p>
+    </div>
+    <!--
+        <h2><sup>*</sup>审批意见</h2>
+        <p class="clearfix"><label><img src="img/apply_eit.gif" /></label><textarea placeholder="" readonly></textarea></p>
+    -->
+
+    <div class="bnt-apply">
+        <a class="confirm" href="#">提交</a>
+        <a class="canel" href="#">重置</a>
+    </div>
+
+
+</div>
+<script>
+
+    $(function () {
+
+        //获取订单查看假数据模拟
+        var getUsersData = {
+            user: "李小米",
+            tel: "13899997000",
+            department_id: "市委办公室",
+            message: "",
+            success: true//flash
+        };
+
+        //请求接口展示订单查看
+        /*$.ajax({
+         type: "GET",
+         url: wlanUrl + "submitApplication.html",//接口需要修改
+         data: {},
+         dataType: 'json',
+         success: function (getUsersData) {*/
+
+        //数据返回成功
+        if (getUsersData.success) {
+
+            //按接口返回参值写对应文本框,比如“getUsersData.XXX”
+            $("#applyUser").val(getUsersData.user);//申请人
+            $("#applyTel").val(getUsersData.tel);//申请人联系方式
+            $("#applyDepartmentId").children("option:selected").val(getUsersData.department_id);//申请人单位
+            $("#useName").val();//用车申请人
+            $("#useTel").val();//用车人联系方式
+            $("#useTitle").children("option:selected").val("");//用车人职称
+            $("#number").val();//人数
+            $("#mdels").children("option:selected").val("");//车型
+            $("#reason").children("option:selected").val("")//用车事由
+            $("#region").children("option:selected").val("");//用车区域
+            $("#beginPlace").val();//上车地点
+            $("#endPlace").val();//下车地点
+            $("#beginTime").val();//出车时间
+            $("#endTime").val();//归队时间
+            $("#carMatters").val();//用车具体事项
+
+        }
+        /* }
+         });*/
+
+
+    });
+</script>
+
+</body>
+</html>
