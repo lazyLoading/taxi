@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>调度车辆</title>
+    <title>选择车辆</title>
     <meta name="author" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -14,16 +14,35 @@
 </head>
 <body style="background: #f4f3f3; padding-bottom: 2rem;">
 <!--头部-->
-<h1 class="header w"><a class="return" href="#"></a><p>车辆选择</p><!--<span></span>--></h1>
-
-<!--搜索条-->
-<div class="search w clearfix"><input class="fl" type="text" placeholder="请输入车牌号" /><a class="fr" href="#">搜索</a> </div>
+<h1 class="header w"><a class="return" href="#"></a><p>选择车辆</p><!--<span></span>--></h1>
 
 <!--查询-->
-<div class="inquiry clearfix">
-    <p class="fl"><label>车辆类型：</label><select><option>全部</option><option>商务车</option></select></p>
+<div class="inquiry-box"><!--style="display: none;"-->
+    <div class="inquiry clearfix">
+        <div class="clearfix">
+
+            <p class="fl">
+                <label>用车类型：</label>
+                <select id="mdels">
+                    <option value="0">全部</option>
+                    <option value="1">客车</option>
+                    <option value="2">面包车</option>
+                    <option value="3">商务车</option>
+                    <option value="4">轿车</option>
+                </select>
+            </p>
+
+        </div>
+
+        <p class="clearfix r"><label>车牌号：</label><input  type="text"/></p>
+    </div>
+    <div class="search-bnt clearfix">
+        <a id="queryInsuranceProduct" href="javascript:void(0);">查询</a>
+    </div>
 </div>
 
+<div class="not-data" style="display: none">暂无数据</div>
+<div class="load"><img src="img/loading.gif"/></div>
 <div class="order-status-cont">
 
     <div class="list">
@@ -35,7 +54,15 @@
 
         </ul>
     </div>
+    <div class="list">
+        <h2 class="clearfix"><p class="fl"><b>车牌号：</b><span>苏A1223333</span></p><p class="fr"><a class="gray" href="#">选择</a></p></h2>
+        <ul>
+            <li><label>车辆状态：</label><span>空闲</span></li>
+            <li><label>车辆类型：</label><span>商务车</span></li>
+            <li><label>座位数：</label><span>7</span></li>
 
+        </ul>
+    </div>
 </div>
 <!--查看更多-->
 <div class="more w"><a href="#"> 查看更多>></a></div>

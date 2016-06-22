@@ -16,21 +16,52 @@
 </head>
 <body style="background: #f4f3f3; padding-bottom: 2rem;">
 <!--头部-->
-<h1 class="header w"><a class="return" href="#"></a><p>选择驾使员/车型</p><!--<span></span>--></h1>
+<h1 class="header w"><a class="return" href="#"></a><p>选择驾使员</p><!--<span></span>--></h1>
 
 <!--搜索条-->
 <div class="search w clearfix"><input class="fl" type="text" placeholder="请输入关键字" /><a class="fr" href="#">搜索</a> </div>
 
 <!--查询-->
-<div class="inquiry clearfix">
-    <p class="fl"><label>状态：</label><select><option>全部</option><option>空闲</option><option>工作中</option></select></p>
-    <p class="fl"><label>车型：</label><select><option>全部</option><option>商务车</option></select></p>
+<div class="inquiry-box"><!--style="display: none;"-->
+    <div class="inquiry clearfix">
+        <div class="clearfix">
+
+            <p class="fl">
+                <label>用车类型：</label>
+                <select id="mdels">
+                    <option value="0">全部</option>
+                    <option value="1">客车</option>
+                    <option value="2">面包车</option>
+                    <option value="3">商务车</option>
+                    <option value="4">轿车</option>
+                </select>
+            </p>
+
+        </div>
+
+        <p class="clearfix r"><label>车牌号：</label><input  type="text"/></p>
+    </div>
+    <div class="search-bnt clearfix">
+        <a id="queryInsuranceProduct" href="javascript:void(0);">查询</a>
+    </div>
 </div>
+
+<div class="not-data" style="display: none">暂无数据</div>
+<div class="load"><img src="img/loading.gif"/></div>
 
 <div class="order-status-cont">
 
     <div class="list">
-        <h2 class="clearfix"><p class="fl"><b>驾使员：</b><span>米多多</span></p><p class="fr"><a id="priceInfo" class="orange" href="#">价格</a><a href="#">选择</a></p></h2>
+        <h2 class="clearfix"><p class="fl"><b>驾使员：</b><span>米多多</span></p><p class="fr"><!--<a id="priceInfo" class="orange" href="#">价格</a>--><a href="#">选择</a></p></h2>
+        <ul>
+            <li><label>状态：</label><span>空闲</span></li>
+            <li><label>车型：</label><span>商务车</span></li>
+            <li><label>联系电话：</label><span>1380000000</span></li>
+
+        </ul>
+    </div>
+    <div class="list">
+        <h2 class="clearfix"><p class="fl"><b>驾使员：</b><span>米多多</span></p><p class="fr"><!--<a id="priceInfo" class="orange" href="#">价格</a>--><a class="gray" href="#">选择</a></p></h2>
         <ul>
             <li><label>状态：</label><span>空闲</span></li>
             <li><label>车型：</label><span>商务车</span></li>

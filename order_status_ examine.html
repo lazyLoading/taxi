@@ -13,21 +13,59 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="js/global.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_004.js" type="text/javascript"></script>
+    <link href="css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+    <link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+    <script src="js/mobiscroll.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_005.js" type="text/javascript"></script>
+    <link href="css/mobiscroll_003.css" rel="stylesheet" type="text/css">
 </head>
 <body style="background: #f4f3f3; padding-bottom: .4rem;">
 <!--头部-->
 <h1 class="header w"><a class="return" href="#"></a>
     <p>订单状态</p><!--<span></span>--></h1>
+<!--查询-->
+<div class="inquiry-box"><!--style="display: none;"-->
+    <div class="inquiry clearfix">
+        <div class="clearfix">
+            <p class="fl">
+                <label>订单状态：</label>
+                <select id="state">
+                    <option value="0">全部</option>
+                    <option value="1">未审核</option>
+                    <option value="2">审核通过</option>
+                </select>
+            </p>
+            <p class="fr">
+                <label>用车类型：</label>
+                <select id="mdels">
+                    <option value="0">全部</option>
+                    <option value="1">客车</option>
+                    <option value="2">面包车</option>
+                    <option value="3">商务车</option>
+                    <option value="4">轿车</option>
+                </select>
+            </p>
 
-<div class="order-status-tab" id="orderStatusTab">
-    <a class="act" href="javascript:;">审核中</a>
-    <a href="javascript:;">派车中</a>
-    <a href="javascript:;">服务中</a>
-    <a href="javascript:;">已完成</a>
+        </div>
+
+        <p class="clearfix r">
+            <label for="beginTime">用车时间：</label> <input value="" name="beginTime " id="beginTime" type="text" readonly/>
+        </p>
+        <p class="clearfix r"><label>用车人：</label><input id="applyUser" type="text" \></p>
+        <p class="clearfix r"><label>用车单位：</label><input id="applyDepartmentId" type="text"/></p>
+        <p class="clearfix r"><label>订单编号：</label><input id="ordeNum" type="text"/></p>
+    </div>
+    <div class="search-bnt clearfix">
+        <a id="queryInsuranceProduct" href="javascript:void(0);">查询</a>
+        <a id="resetInsuranceProduct" href="javascript:void(0);">重置</a>
+    </div>
 </div>
 
-<!--已完成中的：搜索条-->
-<div class="search w clearfix"><input class="fl" type="text" placeholder="请输入搜索关键字"/><a class="fr" href="#">搜索</a></div>
+<div class="not-data" style="display: none">暂无数据</div>
+<div class="load"><img src="img/loading.gif"/></div>
 
 <div class="order-status-cont" id="orderStatusCont">
     <!--审核中-->
@@ -36,113 +74,264 @@
             <h2 class="clearfix"><p class="fl"><b>No.</b><span>M111111111111111111114</span></p>
                 <p class="fr"><i class="edit"></i><i class="delete"></i></p></h2>
             <ul>
-                <li><label><img src="img/apply_time.gif"/>预计用车时间：</label><span>2016-10-12 13:30 00 00</span></li>
                 <li><label>申请人：</label><span>米多多(1383838778)</span></li>
-                <li><label>申请单位：</label><span>淮安体育中心</span></li>
-                <li><label>用车联系人：</label><span>米多多(1383838778)</span></li>
-                <li><label>用车天数：</label><span>3天</span></li>
-                <li><label>用车事由：</label><span>取文件</span></li>
+                <li><label>用车类型：</label><span>商务车</span></li>
+                <li><label>用车人：</label><span>多多</span></li>
+                <li><label>用车区域：</label><span>市内</span></li>
                 <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
                 <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
+                <li><label>用车事由：</label><span>取文件</span></li>
+                <li><label>流程状态：</label><span>申请</span></li>
             </ul>
             <div class="status">您的申请正在审核中,请耐心等待...</div>
         </div>
-        <div class="list">
-            <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p>
-                <p class="fr"><i class="edit"></i><i class="delete"></i></p></h2>
-            <ul>
-                <li><label><img src="img/apply_time.gif"/>预计用车时间：</label><span>2016-10-12 13:30 00 00</span></li>
-                <li><label>申请人：</label><span>米多多(1383838778)</span></li>
-                <li><label>申请单位：</label><span>淮安体育中心</span></li>
-                <li><label>用车联系人：</label><span>米多多(1383838778)</span></li>
-                <li><label>用车天数：</label><span>3天</span></li>
-                <li><label>用车事由：</label><span>取文件</span></li>
-                <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
-                <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
-            </ul>
-            <div class="status" style="color: red">您的申请驳回原因：不通过</div>
-        </div>
     </div>
-
-    <!--派件中-->
-    <div class="box">
-        <div class="list">
-            <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p>
-                <p class="fr"><a href="#">终止派车</a></p></h2>
-            <ul>
-                <li><label><img src="img/apply_time.gif"/>预计用车时间：</label><span>2016-10-12 13:30 00 00</span></li>
-                <li><label>申请人：</label><span>米多多(1383838778)</span></li>
-                <li><label>申请单位：</label><span>淮安体育中心</span></li>
-                <li><label>用车联系人：</label><span>米多多(1383838778)</span></li>
-                <li><label>用车天数：</label><span>3天</span></li>
-                <li><label>用车事由：</label><span>取文件</span></li>
-                <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
-                <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
-            </ul>
-            <div class="status">淮安市***在为您派车中,请耐心等待...</div>
-        </div>
-    </div>
-    <!--服务中-->
-    <div class="box">
-        <div class="list">
-            <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p> <p class="fr"><a href="car_api.html">车辆定位</a></p></h2>
-            <ul>
-                <li><label><img src="img/apply_time.gif"/>预计用车时间：</label><span>2016-10-12 13:30 00 00</span></li>
-                <li><label>申请人：</label><span>米多多(1383838778)</span></li>
-                <li><label>申请单位：</label><span>淮安体育中心</span></li>
-                <li><label>用车联系人：</label><span>米多多(1383838778)</span></li>
-                <li><label>用车天数：</label><span>3天</span></li>
-                <li><label>用车事由：</label><span>取文件取文件取文件取文件取文件取文件取文件取文件取文件取文件取文件取文件b</span></li>
-                <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
-                <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
-                <li><label>已派车辆：</label><span>苏H12367</span></li>
-                <li><label>已派驾驶员：</label><span>天天</span></li>
-            </ul>
-            <div class="status">正为您服务，请实时等待...</div>
-        </div>
-    </div>
-    <!--已完成-->
+    <!--审核通过-->
     <div class="box">
         <div class="list">
             <a href="#" class="trajectory"></a>
             <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p>
-                <p class="fr"><a href="#">详情</a></p></h2>
+                <p class="fr"><a href="#">查看</a></p></h2>
             <ul>
-                <li><label><img src="img/apply_time.gif"/>开始时间：</label><span>2016-10-12 13:30 00 00</span></li>
-                <li><label><img src="img/apply_time.gif"/>结束时间：</label><span>2016-10-12 13:30 00 00</span></li>
                 <li><label>申请人：</label><span>米多多(1383838778)</span></li>
-                <li><label>申请单位：</label><span>淮安体育中心</span></li>
-                <li><label>用车联系人：</label><span>米多多(1383838778)</span></li>
-                <li><label>用车天数：</label><span>3天</span></li>
-                <li><label>用车事由：</label><span>公务出差(区域外)</span></li>
+                <li><label>用车类型：</label><span>商务车</span></li>
+                <li><label>用车人：</label><span>多多</span></li>
+                <li><label>用车区域：</label><span>市内</span></li>
                 <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
                 <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
-                <li><label>行驶里程：</label><span class="red">514.09公里</span></li>
-                <li><label>用车费用：</label><span class="red">1028.17元</span></li>
+                <li><label>用车事由：</label><span>取文件</span></li>
+                <li><label>流程状态：</label><span>审核通过</span></li>
             </ul>
         </div>
     </div>
+    <!--    &lt;!&ndash;派件中&ndash;&gt;
+        <div class="box">
+            <div class="list">
+                <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p>
+                    <p class="fr"><a href="#">终止派车</a></p></h2>
+                <ul>
+                    <li><label><img src="img/apply_time.gif"/>预计用车时间：</label><span>2016-10-12 13:30 00 00</span></li>
+                    <li><label>申请人：</label><span>米多多(1383838778)</span></li>
+                    <li><label>申请单位：</label><span>淮安体育中心</span></li>
+                    <li><label>用车联系人：</label><span>米多多(1383838778)</span></li>
+                    <li><label>用车天数：</label><span>3天</span></li>
+                    <li><label>用车事由：</label><span>取文件</span></li>
+                    <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
+                    <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
+                </ul>
+                <div class="status">淮安市***在为您派车中,请耐心等待...</div>
+            </div>
+        </div>
+        &lt;!&ndash;服务中&ndash;&gt;
+        <div class="box">
+            <div class="list">
+                <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p>
+                    <p class="fr"><a href="car_api.html">车辆定位</a></p></h2>
+                <ul>
+                    <li><label><img src="img/apply_time.gif"/>预计用车时间：</label><span>2016-10-12 13:30 00 00</span></li>
+                    <li><label>申请人：</label><span>米多多(1383838778)</span></li>
+                    <li><label>申请单位：</label><span>淮安体育中心</span></li>
+                    <li><label>用车联系人：</label><span>米多多(1383838778)</span></li>
+                    <li><label>用车天数：</label><span>3天</span></li>
+                    <li><label>用车事由：</label><span>取文件取文件取文件取文件取文件取文件取文件取文件取文件取文件取文件取文件b</span></li>
+                    <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
+                    <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
+                    <li><label>已派车辆：</label><span>苏H12367</span></li>
+                    <li><label>已派驾驶员：</label><span>天天</span></li>
+                </ul>
+                <div class="status">正为您服务，请实时等待...</div>
+            </div>
+        </div>-->
+
 
 </div>
-<!--非已完成中的：查看更多-->
+<!--查看更多-->
 <div class="more w"><a href="#"> 查看更多>></a></div>
 
+<!--弹框-->
+<div class="layer"></div>
+<div class="layer-cont">
+    <h2>提示<a class="close" href="#"></a></h2>
+    <div class="main succ-main">
+        <p class="text">您确定删除评价吗?</p>
+    </div>
+    <div class="bnt dispatch-bnt"><a class="confirm" href="javascript:;">确认</a><a class="close"
+                                                                                  href="javascript:;">取消</a></div>
+
+</div>
+
 <script type="text/javascript">
+
+
+    //订单状态，车型，用车时间，用车人，用车单位，订单编号
+    var currParam = {status: -1, mdels: '', beginTime: '', applyUser: '', applyDepartmentId: '', ordeNum: ''};
+
     $(function () {
-        //选项卡切的
-        $(".order-status-cont > div:not(:first)").hide();
-        $(".order-status-tab a").each(function (index, element) {
-            $(this).click(function () {
-                $(".order-status-tab a.act").removeClass("act");
-                $(this).addClass("act");
-                $(".order-status-cont > div:eq(" + index + ")").show().siblings().hide();
+
+        mobiscroll();//日历插件
+        deleteFn();//弹框
+
+        //查询
+        $("#queryInsuranceProduct").click(function () {
+
+            CURPAGENUM = 1;
+            var currstatus = $("#state").children("option:selected").attr("value");//订单状态
+            var currmdels = $("#mdels").children("option:selected").attr("value");//用车类型
+            var currbeginTime = $("#beginTime").val();//用车时间
+            var begin = new SimpleDateFormat("YYYY-MM-DD");//开始时间格式
+            begin = begin.parse(currbeginTime).getTime();//解析成毫秒
+            var currApplyUser = $("#applyUser").val();//用车人
+            var currApplyDepartmentId = $("#applyDepartmentId").val();//用车单位
+            var currOrdeNum = $("#ordeNum").val();//订单编号
+
+            currParam.status = currstatus;//订单状态
+            currParam.mdels = currmdels;//用车类型
+            currParam.beginTime = begin;//用车时间
+            currParam.applyUser = currApplyUser;//用车人
+            currParam.applyDepartmentId = currApplyDepartmentId;//用车单位
+            currParam.ordeNum = currOrdeNum;//订单编号
+
+            Activity();
+        });
+
+        //重置刷新当前页
+        $("#resetInsuranceProduct").click(function () {
+            window.location.reload(true);
+        });
+
+    });
+
+
+    //获取订单列表
+    function Activity() {
+
+        send(loadListCallback);
+        function send(success) {
+
+            $.ajax({
+                type: "post",
+                url: wlanUrl + "/insuranceOrder/search.html",//接口需要修改
+                dataType: "json",
+                data: {
+                    status: currParam.status,
+                    mdels: currParam.mdels,
+                    beginTime: currParam.beginTime,
+                    applyUser: currParam.applyUser,
+                    applyDepartmentId: currParam.applyDepartmentId,
+                    ordeNum: currParam.ordeNum
+
+                },
+                success: success
             });
-        });
-        //删除订单
+        }
+
+        function loadListCallback(resp) {
+
+            var data = resp.data;
+            var allActivity = data.rows;
+
+            //如果data.rows数据列表为空
+            if (allActivity == null || allActivity == undefined || allActivity.length == 0) {
+
+                $(".not-data").show();//显示暂无数据
+                $(".load").hide();//隐藏加载圈
+                return;
+            }
+
+
+            var orderStatusCont = $("#orderStatusCont");
+            orderStatusCont.empty();
+            $(".load").hide();//隐藏加载圈
+            var str = "";
+
+
+            $.each(allActivity, function (i, curr) {
+
+                //请按接口中参数名修改对应的名称："curr.XXX";
+
+                str += "<div class=\"box\">";
+                str += "<div class=\"list\">";
+                str += "<h2 class=\"clearfix\"><p class=\"fl\"><b>No.</b><span>" + curr.order + "</span></p>";
+
+                //如果状态为1.申请，2.展示状态
+                if (curr.status == 1) {
+                    str += "<p class=\"fr\"><i class=\"edit\"></i><i class=\"delete\"></i></p></h2>";
+                }
+                if (curr.status == 2) {
+                    str += "<p class=\"fr\"><a href=''>查看</a></p></h2>";
+                }
+
+                str += "<ul>";
+                str += "<li><label>申请人：</label><span>米多多(1383838778)</span></li>";
+                str += "<li><label>用车人：</label><span>多多</span></li>";
+                str += "<li><label>用车区域：</label><span>3天</span></li>";
+                str += "<li><label><img src=\"img/origin.gif\"/></label><span>淮安体育中心</span></li>";
+                str += "<li><label><img src=\"img/end.gif\"/></label><span>淮安汽车站</span></li>";
+                str += "<li><label>用车事由：</label><span>取文件</span></li>";
+
+                //如果状态为1.申请，2.展示状态
+                if (curr.status == 1) {
+                    str += "<li><label>流程状态：</label><span>申请</span></li>";
+                }
+                if (curr.status == 2) {
+                    str += "<li><label>流程状态：</label><span>审核通过</span></li>";
+                }
+                str += "</ul>";
+
+                //如果状态为1.申请，2.展示状态
+                if (curr.status == 1) {
+                    str += "<div class=\"status\">您的申请正在审核中,请耐心等待...</div>";
+                }
+
+                str += "</div>";
+                str += "</div>";
+
+            });
+
+            orderStatusCont.append(str);
+
+        }
+
+    }
+
+
+    //日历插件
+    function mobiscroll() {
+        var currYear = (new Date()).getFullYear();
+        var opt = {};
+        opt.date = {preset: 'date'};
+        opt.datetime = {preset: 'datetime'};
+        opt.time = {preset: 'time'};
+        opt.default = {
+            theme: 'android-ics light', //皮肤样式
+            display: 'modal', //显示方式
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            showNow: true,
+            nowText: "今天",
+            startYear: currYear - 10, //开始年份
+            endYear: currYear + 10 //结束年份
+        };
+
+        var optDateTime = $.extend(opt['datetime'], opt['default']);
+        $("#beginTime").mobiscroll(optDateTime).datetime(optDateTime);
+        // $("#endTime").mobiscroll(optDateTime).datetime(optDateTime);
+    }
+
+    //弹框
+    function deleteFn() {
+
         $(".delete").click(function () {
-            $(this).parents(".list").remove();
+            $(".layer,.layer-cont").show();
+
         });
-    })
+        $(".close").click(function () {
+            $(".layer,.layer-cont").hide();
+
+        });
+
+    }
 
 </script>
 

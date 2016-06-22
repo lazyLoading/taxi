@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>回归登记</title>
+    <title>交车登记</title>
     <meta name="author" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -17,47 +17,85 @@
 <body style="background: #f4f3f3; padding-bottom: .4rem;">
 <!--头部-->
 <h1 class="header w"><a class="return" href="#"></a>
-    <p>回归登记</p><!--<span></span>--></h1>
+    <p>交车登记</p><!--<span></span>--></h1>
 
-<div class="order-status-tab">
-    <a class="act" href="javascript:;">交车审核</a>
-    <a href="javascript:;">审核通过</a>
-    <a href="javascript:;">审核驳回</a>
-    <a href="javascript:;">取消交车</a>
+<!--查询-->
+<div class="inquiry-box"><!--style="display: none;"-->
+    <div class="inquiry clearfix">
+        <div class="clearfix">
+            <p class="fl">
+                <label>审核状态：</label>
+                <select id="state">
+                    <option value="0">全部</option>
+                    <option value="1">未审核</option>
+                    <option value="2">审核通过</option>
+                </select>
+            </p>
+            <p class="fr">
+                <label>用车类型：</label>
+                <select id="mdels">
+                    <option value="0">全部</option>
+                    <option value="1">客车</option>
+                    <option value="2">面包车</option>
+                    <option value="3">商务车</option>
+                    <option value="4">轿车</option>
+                </select>
+            </p>
 
+        </div>
+
+        <p class="clearfix r">
+            <label for="beginTime">用车时间：</label> <input value="" name="beginTime " id="beginTime" type="text" readonly/>
+        </p>
+        <p class="clearfix r"><label>用车人：</label><input id="applyUser" type="text" \></p>
+        <p class="clearfix r"><label>用车单位：</label><input id="applyDepartmentId" type="text"/></p>
+        <p class="clearfix r"><label>订单编号：</label><input id="ordeNum" type="text"/></p>
+    </div>
+    <div class="search-bnt clearfix">
+        <a id="queryInsuranceProduct" href="javascript:void(0);">查询</a>
+        <a id="resetInsuranceProduct" href="javascript:void(0);">重置</a>
+    </div>
 </div>
+
+<div class="not-data" style="display: none">暂无数据</div>
+<div class="load"><img src="img/loading.gif"/></div>
 <div class="order-status-cont">
 
     <!--交车审核列表-->
     <div class="box">
         <div class="list">
             <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p>
-                <p class="fr"><a class="cancel" href="javascript:;">取消归队</a></p><!--<p class="fr"><a class="gray" href="#">查看</a></p>--></h2>
+               <p class="fr"><a class="gray" href="#">查看</a></p></h2>
             <ul>
                 <li><label>申请人：</label><span>米多多</span></li>
                 <li><label>用车类型：</label><span>商务车</span></li>
                 <li><label>用车人：</label><span>米多多</span></li>
+                <li><label>用车区域：</label><span>省外</span></li>
                 <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
                 <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
                 <li><label><img src="img/apply_time.gif"/>出车时间：</label><span>2016-10-12 13:30 00 00</span></li>
                 <li><label><img src="img/apply_time.gif"/>归队时间：</label><span>2016-10-12 13:30 00 00</span></li>
                 <li><label>用车事由：</label><span>公务出差</span></li>
-                <li><label>流程状态：</label><span class="red">交车审核</span></li>
+                <li><label>流程状态：</label><span class="red">调度不通过</span></li>
+                <li><label>审核状态：</label><span class="red">审核不通过</span></li>
+
             </ul>
         </div>
         <div class="list">
             <h2 class="clearfix"><p class="fl"><b>No.</b><span>M78587484847754948484</span></p>
-                <p class="fr"><a class="cancel" href="javascript:;">取消归队</a></p><!--<p class="fr"><a class="gray" href="#">查看</a></p>--></h2>
+                <p class="fr"><a class="gray" href="#">查看</a></p><p class="fr"><a class="cancel" href="javascript:;">确认归队</a></p></h2>
             <ul>
                 <li><label>申请人：</label><span>米多多</span></li>
                 <li><label>用车类型：</label><span>商务车</span></li>
                 <li><label>用车人：</label><span>米多多</span></li>
+                <li><label>用车区域：</label><span>省外</span></li>
                 <li><label><img src="img/origin.gif"/></label><span>淮安体育中心</span></li>
                 <li><label><img src="img/end.gif"/></label><span>淮安汽车站</span></li>
                 <li><label><img src="img/apply_time.gif"/>出车时间：</label><span>2016-10-12 13:30 00 00</span></li>
                 <li><label><img src="img/apply_time.gif"/>归队时间：</label><span>2016-10-12 13:30 00 00</span></li>
                 <li><label>用车事由：</label><span>公务出差</span></li>
-                <li><label>流程状态：</label><span class="red">交车审核</span></li>
+                <li><label>流程状态：</label><span class="red">调度通过</span></li>
+                <li><label>审核状态：</label><span class="red">审核通过</span></li>
             </ul>
         </div>
     </div>

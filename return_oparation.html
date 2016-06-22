@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>确认归队</title>
+    <title>归队登记</title>
     <meta name="author" content="">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -24,7 +24,8 @@
 </head>
 <body>
 <!--头部-->
-<h1 class="header w"><a class="return" href="#"></a><p>确认归队</p><!--<span></span>--></h1>
+<h1 class="header w"><a class="return" href="#"></a>
+    <p>归队登记</p><!--<span></span>--></h1>
 <!--订单信息-->
 <div class="car-apply-cont" style="margin-bottom: .25rem;">
     <h2><sup>*</sup>订单信息</h2>
@@ -45,35 +46,34 @@
 </div>
 <div class="car-apply-cont">
     <h2><sup>*</sup>归队信息</h2>
-    <div>
-        <p class="clearfix"><label for="beginTime"><img src="img/apply_time.gif"/></label><input
+    <div class="label-text">
+        <p class="clearfix"><label for="beginTime">用车时间：</label><input
                 value="" class="" readonly name="beginTime " id="beginTime" type="text"
-                placeholder="实际用车时间"/><a href="#"></a></p>
-        <p class="clearfix"><label for="endTime"><img src="img/apply_day.gif"/></label><input
+                placeholder=""/><a href="#"></a></p>
+        <p class="clearfix"><label for="endTime">归队时间：</label><input
                 value="" class="" readonly name="endTime" id="endTime" type="text"
-                placeholder="实际归队时间"/></p>
-        <p class="clearfix"><label><img src="img/apply_user.gif" /></label><input type="text" placeholder="乘车人数" /></p>
-        <p class="clearfix api"><label><img src="img/origin.gif"/></label><input type="text" placeholder="上车地点"/><a
+                placeholder=""/></p>
+        <p class="clearfix"><label>乘车人数：</label><input type="text"/></p>
+        <p class="clearfix api"><label>上车地点：</label><input type="text"/><a style="right: .2rem;"
                 href="#"></a></p>
-        <p class="clearfix api"><label><img src="img/end.gif"/></label><input type="text" placeholder="目的地"/><a
-                href="#"></a></p>
-        <p class="clearfix"><label><img src="img/end.gif" /></label><input type="text" placeholder="GPS里程" /></p>
-        <p class="clearfix"><label><img src="img/end.gif" /></label><input type="text" placeholder="行驶里程" /></p>
-        <p class="clearfix"><label><img src="img/apply_name.gif" /></label><input type="text" placeholder="运费收入" /></p>
+        <p class="clearfix api"><label>目的地：</label><input type="text"/><a style="right: .2rem;" href="#"></a></p>
+        <p class="clearfix"><label>GPS里程：</label><input type="text"/></p>
+        <p class="clearfix"><label>行驶里程：</label><input type="text"/></p>
+        <p class="clearfix"><label>运费收入：</label><input type="text"/></p>
 
-        <p class="clearfix"><label><img src="img/apply_tel.gif" /></label><input type="text" placeholder="差旅补贴" /></p>
-        <p class="clearfix"><label><img src="img/apply-company.png" /></label><input type="text" placeholder="公路补贴" /></p>
+        <p class="clearfix"><label>差旅补贴：</label><input type="text"/></p>
+        <p class="clearfix"><label>公路补贴：</label><input type="text"/></p>
 
-        <p class="clearfix"><label><img src="img/apply_name.gif" /></label><input type="text" placeholder="加班费" /></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif" /></label><input type="text" placeholder="过路费" /></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif" /></label><input type="text" placeholder="洗车费" /></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif" /></label><input type="text" placeholder="停车费" /></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif" /></label><input type="text" placeholder="其他费" /></p>
-        <p class="clearfix"><label><img src="img/apply_eit.gif" /></label><textarea placeholder="用车详细事项"></textarea></p>
+        <p class="clearfix"><label>加班费：</label><input type="text"/></p>
+        <p class="clearfix"><label>过路费：</label><input type="text"/></p>
+        <p class="clearfix"><label>洗车费：</label><input type="text"/></p>
+        <p class="clearfix"><label>停车费：</label><input type="text"/></p>
+        <p class="clearfix"><label>其他费：</label><input type="text"/></p>
+        <p class="clearfix"><label>详细事项：</label><textarea></textarea></p>
     </div>
     <div class="bnt-apply">
         <a class="confirm" href="#">确认</a>
-        <!-- <a class="confirm" href="#">驳回</a>-->
+         <a class="canel" href="#">取消</a>
     </div>
 
 
@@ -86,7 +86,7 @@
     <h2>提示</h2>
     <div class="main succ-main">
         <p class="text">归队提交成功!</p>
-      <!--  <p class="open">进入<a href="order_status_ examine.html">订单中心</a>查看进度</p>-->
+        <!--  <p class="open">进入<a href="order_status_ examine.html">订单中心</a>查看进度</p>-->
     </div>
     <div class="bnt"><a class="confirm" href="javascript:;">确认</a></div>
 

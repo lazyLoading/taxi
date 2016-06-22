@@ -4,7 +4,7 @@
 i.tip{display: block;position: absolute;   width: .1rem; height: .1rem; background: red; z-index: 2; border-radius: .5rem;}
 /*橙色冒泡小提示*/
 #promptTip{ display: none;  position: fixed;  top:50%; margin-top: -.1rem; padding: 0 25px; height: .3rem; line-height:.3rem; border: 1px solid #fe851d; background:#fff9ef url("../img/ic-prompt.png") no-repeat .12rem center; text-indent:.1rem; color: #fe851d; font-size: .12rem; border-radius:.03rem;}
-
+.load{ text-align: center;    padding: .3rem;}
 
 /* 头部*/
 .header{position: relative; height:.375rem; background: #04bcfa;}
@@ -118,9 +118,14 @@ i.tip{display: block;position: absolute;   width: .1rem; height: .1rem; backgrou
 .ic-evaluate a.act{background: url("../img/evaluate_act.gif") no-repeat; background-size: cover;}
 
 
-.inquiry{font-size: .12rem; }
-.inquiry p{ margin: .1rem; margin-bottom: 0;}
-.inquiry select{ border:1px solid #eee; padding-right:.1rem; text-indent: .02rem; height: .27rem; line-height: .27rem;font-size: .12rem; }
+.inquiry{font-size: .12rem; margin: .1rem; }
+
+.inquiry p{margin-top: .05rem}
+.inquiry p label{font-size: .1rem;}
+.inquiry p.r label{ float: left; width: .5rem;height: .27rem; line-height: .27rem;}
+.inquiry select,.inquiry input{ border:1px solid #eee; padding-right:.1rem; text-indent: .02rem; height: .27rem; line-height: .27rem;font-size: .12rem; }
+.inquiry input{ float: left; width: 83%; padding-right: 0;}
+
 .inquiry .total{height: .27rem;line-height: .27rem; color: red;}
 .order-status-cont .list h2 a.gray{ background: #ddd;}
 .order-status-cont .list h2 a.red{ background: red;}
@@ -129,8 +134,10 @@ i.tip{display: block;position: absolute;   width: .1rem; height: .1rem; backgrou
 .car-apply-cont  .label-text label{width: .7rem; text-align: right;}
 .car-apply-cont  .label-text input,.car-apply-cont .label-text select { width: 70%;}
 .car-apply-cont  .label-text  textarea{ width:75%;}
-
-
+.search-bnt{ text-align: center; margin-bottom: .3rem;}
+.search-bnt a{ display: inline-block;padding: .03rem .1rem; margin: 0 .03rem;}
+#queryInsuranceProduct{ background: #08b0f7; color: #FFF;}
+#resetInsuranceProduct{ background: #ddd; color: #666;}
 
 .layer{ display: none; position: fixed; left: 0;top:0; width: 100%; height: 100%; background:#000; opacity: .7; z-index: 99;}
 .layer-cont{ display: none; position: fixed;top:25%;   width:90%; background: #fff;  margin:5%; z-index: 100; border-radius:.03rem; overflow: hidden; }

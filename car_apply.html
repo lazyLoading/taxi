@@ -27,52 +27,89 @@
 <h1 class="header w"><a class="return" href="#"></a>
     <p>用车申请</p><!--<span></span>--></h1>
 <div class="car-apply-cont">
+
     <h2><sup>*</sup>申请人信息</h2>
     <div>
-        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input type="text" placeholder="申请人"/></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input type="text" placeholder="联系方式"/></p>
-        <p class="clearfix"><label><img src="img/apply-company.png"/></label><input type="text" placeholder="用车单位"/></p>
+        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input id="applyUser" type="text"
+                                                                                 placeholder="申请人" readonly/>
+        </p>
+        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input id="applyTel" type="text"
+                                                                                placeholder="联系方式" readonly/></p>
+        <p class="clearfix"><label><img src="img/apply-company.png"/></label><input id="applyDepartmentId" type="text"
+                                                                                    placeholder="用车单位" readonly/></p>
     </div>
     <h2><sup>*</sup>用车人信息</h2>
     <div>
-        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input type="text" placeholder="用车人"/></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input type="text" placeholder="用车人联系方式"/></p>
-        <p class="clearfix"><label><img src="img/apply-title.png"/></label><select>
-            <option>用车人职称</option>
-            <option>用车人职称</option>
-        </select></p>
+        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input id="useName" type="text"
+                                                                                 placeholder="用车人"/></p>
+        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input id="useTel" type="text"
+                                                                                placeholder="用车人联系方式"/></p>
+        <p class="clearfix"><label><img src="img/apply-title.png"/></label>
+            <select id="useTitle">
+                <option value="0">选择用车人职级</option>
+                <option value="1">厅级</option>
+                <option value="2">处级</option>
+                <option value="3">科级</option>
+                <option value="4">科级以下</option>
+            </select>
+        </p>
     </div>
     <h2><sup>*</sup>订单详情</h2>
     <div>
-        <p class="clearfix"><label><img src="img/apply_user.gif"/></label><input type="text" placeholder="人数"/></p>
-        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><select>
-            <option>用车事由</option>
-            <option>调研</option>
-        </select></p>
-        <p class="clearfix"><label for="beginTime"><img src="img/apply_time.gif"/></label><input
-                value="" class="" readonly name="beginTime " id="beginTime" type="text"
-                placeholder="出发时间"/><a href="#"></a></p>
-        <p class="clearfix"><label for="endTime"><img src="img/apply_day.gif"/></label><input
-                value="" class="" readonly name="endTime" id="endTime" type="text"
-                placeholder="归队时间"/></p>
-        <p class="clearfix api"><label><img src="img/origin.gif"/></label><input type="text" placeholder="上车地点"/><a
-                href="#"></a></p>
-        <p class="clearfix api"><label><img src="img/end.gif"/></label><input type="text" placeholder="目的地"/><a
-                href="#"></a></p>
-        <p class="clearfix"><label><img src="img/apply-address.png"/></label><select>
-            <option>用车区域</option>
-            <option>省外</option>
-        </select></p>
-        <p class="clearfix design"><label><img src="img/apply-type.png"/></label><input type="text" placeholder="选择车型"/><a
-                href="select_drive.html"></a></p>
-        <p class="clearfix design"><label><img src="img/apply_name.gif"/></label><input type="text" placeholder="选择司机"/><a
-                href="select_drive.html"></a></p>
-<!--        <p class="clearfix"><label><img src="img/apply_user.gif"/></label><input type="text" placeholder="车辆数量"/></p>-->
-        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><textarea placeholder="用车详细事项"></textarea></p>
+        <p class="clearfix"><label><img src="img/apply_user.gif"/></label><input id="number" type="number"
+                                                                                 placeholder="人数"/></p>
+        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label>
+            <select id="reason">
+                <option value="0">选择事由</option>
+                <option value="1">机要通信</option>
+                <option value="2">应急公务</option>
+                <option value="3">调研接待</option>
+                <option value="4">老干部服务</option>
+                <option value="5">行政执法</option>
+                <option value="6">其它公务</option>
+            </select>
+            </select>
+        </p>
+        <p class="clearfix">
+            <label><img src="img/apply-type.png"/></label>
+            <select id="mdels">
+                <option value="0">选择车型</option>
+                <option value="1">客车</option>
+                <option value="2">面包车</option>
+                <option value="3">商务车</option>
+                <option value="4">轿车</option>
+            </select>
+        </p>
+        <p class="clearfix">
+            <label><img src="img/apply-address.png"/></label>
+            <select id="region">
+                <option value="0">选择用车区域</option>
+                <option value="1">市区内</option>
+                <option value="2">县区内</option>
+                <option value="3">市外</option>
+                <option value="4">省外</option>
+            </select>
+        </p>
+        <p class="clearfix">
+            <label for="beginTime"><img src="img/apply_time.gif"/></label>
+            <input value="" class="" readonly name="beginTime " id="beginTime" type="text" placeholder="出发时间"/>
+            <a href="#"></a>
+        </p>
+        <p class="clearfix">
+            <label for="endTime"><img src="img/apply_day.gif"/></label>
+            <input value="" class="" readonly name="endTime" id="endTime" type="text" placeholder="归队时间"/>
+        </p>
+        <p class="clearfix api"><label><img src="img/origin.gif"/></label><input id="beginPlace" type="text"
+                                                                                 placeholder="上车地点"/><a href="#"></a>
+        </p>
+
+        <p class="clearfix api"><label><img src="img/end.gif"/></label><input id="endTPlace" type="text"
+                                                                              placeholder="目的地"/><a href="#"></a></p>
+
+        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><textarea id="carMatters"
+                                                                                   placeholder="用车详细事项"></textarea></p>
     </div>
-    <div class="bnt-apply">
-        <a class="confirm" href="javascript:;">确认</a>
-    </div>
+    <div class="bnt-apply"><a class="confirm" href="javascript:;">确认</a></div>
 </div>
 <!--冒泡小提示-->
 <div id="promptTip">冒泡小提示</div>
@@ -90,15 +127,177 @@
 
 <script type="text/javascript">
 
+    //注：页面地图当初约定好，不用做.
+
+    var wlanUrl = ""//接口公用域名
+
     $(function () {
 
-        //弹层
-        showCancelFn($(".confirm"), $(".layer,.layer-cont"), $(".close"));
-        //冒泡小提示
-        tipMsg($("#promptTip"), '信息不可为空');
+
+        mobiscroll();//日历插件
+
+        //获取申请人信息假数据模拟
+        var getUsersData = {
+            data: [{user: "李小米", tel: "13899997000", department_id: "市委办公室"}],//申请人，联系方式，用车单位
+            message: "",
+            success: true//flash
+        };
+
+        //请求接口展示申请人信息
+        /*$.ajax({
+         type: "GET",
+         url: wlanUrl + "submitApplication.html",//接口需要修改
+         data: {},
+         dataType: 'json',
+         success: function (getUsersData) {*/
+
+        //数据返回成功
+        if (getUsersData.success) {
+
+            $("#applyUser").val(getUsersData.data[0].user);//申请人姓名
+            $("#applyTel").val(getUsersData.data[0].tel);//申请人联系方式
+            $("#applyDepartmentId").val(getUsersData.data[0].department_id);//申请人用车单位
+
+        }
+        /* }
+         });*/
 
 
-        //日历
+        //提交请求接口
+        $(".bnt-apply a").click(function () {
+
+            if (!infoEditFn()) return;//验证提交信息
+
+            var useName = $("#useName").val();//用车申请人
+            var useTel = $("#useTel").val();//用车人联系方式
+            var useTitle = $("#useTitle").children("option:selected").attr("value");//用车人职称
+            var number = $("#number").val();//人数
+            var mdels = $("#mdels").children("option:selected").attr("value");//车型
+            var reason = $("#reason").children("option:selected").attr("value")//用车事由
+            var region = $("#region").children("option:selected").attr("value");//用车区域
+            var beginPlace = $("#beginPlace").val();//上车地点
+            var endPlace = $("#endPlace").val();//下车地点
+            var beginTime = $("#beginTime").val();//出车时间
+            var endTime = $("#endTime").val();//归队时间
+            var carMatters = $("#carMatters").val();//用车具体事项
+
+            $.ajax({
+                type: "GET",
+                url: wlanUrl + "submitApplication.html",//接口需要修改
+                data: {
+                    useName: useName,
+                    useTel: useTel,
+                    useTitle: useTitle,
+                    number: number,
+                    mdels: mdels,
+                    reason: reason,
+                    region: region,
+                    beginPlace: beginPlace,
+                    endPlace: endPlace,
+                    beginTime: beginTime,
+                    endTime: endTime,
+                    carMatters: useName
+                },
+                dataType: 'json',
+                success: function (resp) {
+
+                    //数据返回成功
+                    if (resp.success) {
+
+                        //申请成功弹层
+                        $(".layer,.layer-cont").show();
+
+                        //点击确定,跳转订单状态页
+                        $(".confirm").click(function () {
+                            window.location.href = "order_status_examine.html";
+                        })
+
+                    }
+                }
+            });
+
+
+        });
+
+
+    });
+
+    //信息提交验证
+    function infoEditFn() {
+
+        var useName = $("#useName").val();//用车申请人
+        var useTel = $("#useTel").val();//用车人联系方式
+        var useTitle = $("#useTitle").children("option:selected").attr("value");//用车人职称
+        var number = $("#number").val();//人数
+        var mdels = $("#mdels").children("option:selected").attr("value");//车型
+        var reason = $("#reason").children("option:selected").attr("value")//用车事由
+        var region = $("#region").children("option:selected").attr("value");//用车区域
+        var beginPlace = $("#beginPlace").val();//上车地点
+        var endPlace = $("#endPlace").val();//下车地点
+        var beginTime = $("#beginTime").val();//出车时间
+        var endTime = $("#endTime").val();//归队时间
+        var carMatters = $("#carMatters").val();//用车具体事项
+
+
+        if (useName == "") {
+            tipMsg($("#promptTip"), '请输入用车申请人');
+            return false;
+        }
+        if (useTel == "") {
+            tipMsg($("#promptTip"), '请输入用车人联系方式');
+            return false;
+        }
+        if (useTitle == 0) {
+            tipMsg($("#promptTip"), '请选择用车人职称');
+            return false;
+        }
+        if (number <= 0) {
+            tipMsg($("#promptTip"), '请正确输入人数');
+            return false;
+        }
+        if (mdels == 0) {
+            tipMsg($("#promptTip"), '请选择车型');
+            return false;
+        }
+        if (reason == 0) {
+            tipMsg($("#promptTip"), '请选择用车事由');
+            return false;
+        }
+        if (region == 0) {
+            tipMsg($("#promptTip"), '请选择用车区域');
+            return false;
+        }
+        if (beginPlace == "") {
+            tipMsg($("#promptTip"), '请输入上车地点');
+            return false;
+        }
+
+        if (endPlace == "") {
+            tipMsg($("#promptTip"), '请输入下车地点');
+            return false;
+        }
+
+        if (beginTime == "") {
+            tipMsg($("#promptTip"), '请输入出车时间');
+            return false;
+        }
+
+        if (endTime == "") {
+            tipMsg($("#promptTip"), '请输入归队时间');
+            return false;
+        }
+
+        if (carMatters == "") {
+            tipMsg($("#promptTip"), '请输入用车具体事项');
+            return false;
+        }
+
+        return true;
+
+    }
+
+    //日历插件
+    function mobiscroll() {
         var currYear = (new Date()).getFullYear();
         var opt = {};
         opt.date = {preset: 'date'};
@@ -119,8 +318,7 @@
         var optDateTime = $.extend(opt['datetime'], opt['default']);
         $("#beginTime").mobiscroll(optDateTime).datetime(optDateTime);
         $("#endTime").mobiscroll(optDateTime).datetime(optDateTime);
-
-    });
+    }
 
 
 </script>

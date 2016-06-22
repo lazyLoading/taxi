@@ -20,8 +20,10 @@
     <div class="pic"><img src="img/log-pic.gif"/></div>
     <h1>淮安市公务用车平台</h1>
     <div class="user-cont">
-        <p class="clearfix"><label><img src="img/log-user.png"/></label><input type="text" placeholder="输入用户名"/></p>
-        <p class="clearfix"><label><img src="img/log-password.png"/></label><input type="password" placeholder="输入密码"/>
+        <p class="clearfix"><label><img src="img/log-user.png"/></label><input id="account" type="text"
+                                                                               placeholder="输入用户名"/></p>
+        <p class="clearfix"><label><img src="img/log-password.png"/></label><input id="password" type="password"
+                                                                                   placeholder="输入密码"/>
         </p>
     </div>
 
@@ -29,5 +31,58 @@
     <div class="log-help"><a href="#">忘记密码?</a>|<a href="#">注册用户</a></div>
 
 </div>
+<!--冒泡小提示-->
+<div id="promptTip">冒泡小提示</div>
+<script>
+    $(function () {
+
+        var wlanUrl = ""//接口公用域名
+
+
+        //登录假数据模拟
+        var loginData = {
+            result: "result",
+            data: [{access_token: "A-Za-z0-9"}],
+           /* resultCode: "10011",//10012
+            msg: "用户不存在",//用户名和密码不匹配*/
+            success:true//flash
+        }
+
+        //点击登录
+        $(".log-bnt a").click(function () {
+
+/*            $.ajax({
+                type: "GET",
+                url: wlanUrl + "login/logoff.html",//接口需要修改
+                data: {account:$("#account").val(),password:$("#password").val()},//用户名与密码传参
+                dataType: 'json',
+                success: function (loginData) {*/
+
+                //数据返回成功:跳转公务用车主页
+                if(loginData.success){
+
+                    window.location.href="business_index.html?name="+account;//传用户名
+
+                }else{
+                    //数据返回败打印错误提示
+                    if(loginData.resultCode==10011){
+
+                        tipMsg($("#promptTip"), loginData.msg);
+                    }
+
+                }
+
+
+
+/*                }
+            });*/
+
+
+        });
+
+
+    });
+
+</script>
 </body>
 </html>

@@ -13,61 +13,84 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="js/global.js" type="text/javascript"></script>
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/global.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_004.js" type="text/javascript"></script>
+    <link href="css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+    <link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+    <script src="js/mobiscroll.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_005.js" type="text/javascript"></script>
+    <link href="css/mobiscroll_003.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--头部-->
 <h1 class="header w"><a class="return" href="#"></a>
     <p>服务评价</p><!--<span></span>--></h1>
+
 <div class="car-apply-cont">
     <h2><sup>*</sup>申请人信息</h2>
     <div>
-        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input type="text" placeholder="申请人"
-                                                                                 value="米多多" disabled/></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input type="text" placeholder="联系方式"
-                                                                                value="18000000000" disabled/></p>
-        <p class="clearfix"><label><img src="img/apply-company.png"/></label><input type="text" placeholder="用车单位"
-                                                                                    value="测试单位" disabled/></p>
+        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input id="applyUser" type="text"
+                                                                                 placeholder="用车人" value="米多多"
+                                                                                 readonly/></p>
+        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input id="applyTel" type="text"
+                                                                                placeholder="用车人联系方式"
+                                                                                value="18000000000" readonly/></p>
+        <p class="clearfix"><label><img src="img/apply-title.png"/></label><select id="applyDepartmentId" disabled>
+            <option>市委办公室</option>
+        </select></p>
     </div>
     <h2><sup>*</sup>用车人信息</h2>
     <div>
-        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input type="text" placeholder="用车人"
-                                                                                 value="米多多" disabled/></p>
-        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input type="text" placeholder="用车人联系方式"
-                                                                                value="18000000000" disabled/></p>
-        <p class="clearfix"><label><img src="img/apply-title.png"/></label><select disabled>
-            <option>厅级</option>
+        <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input id="useName" type="text"
+                                                                                 placeholder="用车人" value="米多多"
+                                                                                 readonly/></p>
+        <p class="clearfix"><label><img src="img/apply_tel.gif"/></label><input id="useTel" type="text"
+                                                                                placeholder="用车人联系方式"
+                                                                                value="18000000000" readonly/></p>
+        <p class="clearfix"><label><img src="img/apply-title.png"/></label><select id="useTitle" disabled>
+            <option>处级</option>
         </select></p>
     </div>
     <h2><sup>*</sup>订单详情</h2>
     <div>
-        <p class="clearfix"><label><img src="img/apply_user.gif"/></label><input type="text" placeholder="人数" value="3"
-                                                                                 disabled/></p>
-        <p class="clearfix"><label><img src="img/apply-type.png"/></label><select disabled>
+        <p class="clearfix"><label><img src="img/apply_user.gif"/></label><input id="number" type="text"
+                                                                                 placeholder="人数" value="3" readonly/>
+        </p>
+        <p class="clearfix"><label><img src="img/apply-type.png"/></label><select id="mdels" disabled>
             <option>商务车</option>
         </select></p>
-        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><select disabled>
-            <option>调研</option>
+        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><select id="reason" disabled>
+            <option>集中调研</option>
         </select></p>
-        <p class="clearfix"><label><img src="img/apply_time.gif"/></label><input type="text" placeholder="出发时间"
-                                                                                 value="2016-12-03 12:00:00" disabled/>
+        <p class="clearfix"><label><img src="img/apply-address.png"/></label><select id="region" disabled>
+            <option>市外</option>
+        </select></p>
+        <p class="clearfix"><label><img src="img/origin.gif"/></label><input id="beginPlace" type="text"
+                                                                             placeholder="上车地点" value="上海" readonly/>
         </p>
-        <p class="clearfix"><label><img src="img/apply_day.gif"/></label><input type="text" placeholder="归队时间"
-                                                                                value="2016-12-03 12:00:00" disabled/>
+        <p class="clearfix"><label><img src="img/end.gif"/></label><input id="endPlace" type="text" placeholder="目的地"
+                                                                          value="南京" readonly/></p>
+        <p class="clearfix"><label><img src="img/apply_time.gif"/></label><input id="beginTime" type="text"
+                                                                                 placeholder="出发时间"
+                                                                                 value="2016-12-03 12:00:00" readonly/>
         </p>
-        <p class="clearfix"><label><img src="img/origin.gif"/></label><input type="text" placeholder="上车地点" value="上海"
-                                                                             disabled/></p>
-        <p class="clearfix"><label><img src="img/end.gif"/></label><input type="text" placeholder="目的地" value="南京"
-                                                                          disabled/></p>
-
-        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><textarea placeholder="用车详细事项" disabled>出差11223344444</textarea>
+        <p class="clearfix"><label><img src="img/apply_day.gif"/></label><input id="endTime" type="text"
+                                                                                placeholder="归队时间"
+                                                                                value="2016-12-03 12:00:00" readonly/>
         </p>
+        <p class="clearfix"><label><img src="img/apply_eit.gif"/></label><textarea id="carMatters" placeholder="用车详细事项"
+                                                                                   readonly>出差11223344444</textarea></p>
     </div>
     <h2><sup>*</sup>评价信息</h2>
     <div>
         <p class="clearfix"><label><img src="img/apply_name.gif"/></label><input type="text" placeholder="评价人"
-                                                                                 value="米多多" disabled/></p>
-        <p class="clearfix"><label><img src="img/apply_time.gif"/></label><input type="text" placeholder="评价时间"
-                                                                                 value="2016-12-03 12:00:00" disabled/>
+                                                                                 value="米多多" readonly/></p>
+
+        <p class="clearfix"><label  for="Time"><img src="img/apply_time.gif"/></label><input type="text" name="Time "  id="Time"  placeholder="评价时间"
+                                                                                 value="" />
         </p>
     </div>
 
@@ -76,7 +99,8 @@
 
 
     <div class="bnt-apply">
-        <a class="confirm" href="#">评价</a>
+        <a class="confirm" href="#">确定</a>
+        <a class="canel" href="#">取消</a>
     </div>
 </div>
 
@@ -85,9 +109,32 @@
 
 <script type="text/javascript">
     $(function () {
-
+        mobiscroll(); //日历插件
 
     });
+    //日历插件
+    function mobiscroll() {
+        var currYear = (new Date()).getFullYear();
+        var opt = {};
+        opt.date = {preset: 'date'};
+        opt.datetime = {preset: 'datetime'};
+        opt.time = {preset: 'time'};
+        opt.default = {
+            theme: 'android-ics light', //皮肤样式
+            display: 'modal', //显示方式
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            showNow: true,
+            nowText: "今天",
+            startYear: currYear - 10, //开始年份
+            endYear: currYear + 10 //结束年份
+        };
+
+        var optDateTime = $.extend(opt['datetime'], opt['default']);
+        $("#Time").mobiscroll(optDateTime).datetime(optDateTime);
+        // $("#endTime").mobiscroll(optDateTime).datetime(optDateTime);
+    }
 
 </script>
 
